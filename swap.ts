@@ -266,6 +266,10 @@ async function buyPumpSwap(
     console.log("userBaseTokenAccount", userBaseTokenAccount.toString());
     console.log("userQuoteTokenAccount", userQuoteTokenAccount);
     console.log("baseMint", baseMint.toString());
+    ///////////////////////////////////////////////
+    //////// 注意这里的滑点的计算方式不对  正确的计算方式应该是这种公式： Δy = y - (x * y) / (x + Δx) 后续我会改掉这里
+    //////// TODO：()!
+    ///////////////////////////////////////////////
     // 计算汇率
     const tokenPriceSol = await calculateTokenPoolPrice(
       connection,

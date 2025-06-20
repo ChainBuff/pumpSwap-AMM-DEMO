@@ -7,7 +7,7 @@ const PUMP_AMM_PROGRAM_ID = new PublicKey(
   "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA"
 );
 const connection = new Connection(RPC_ENDPOINT, "confirmed");
-
+//  这里计算方式不对  正确的计算方式应该是 Δy = y - (x * y) / (x + Δx)
 async function calculateTokenPoolPrice(
   connection: Connection,
   poolBaseTokenAccount: PublicKey,
